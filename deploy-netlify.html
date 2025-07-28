@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Automático - Netlify</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #ffd700;
+        }
+        .button {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border-left-color: #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Deploy Automático a Netlify</h1>
+        
+        <div class="step">
+            <h3>📋 Paso 1: Crear repositorio en GitHub</h3>
+            <p>Primero necesitamos crear el repositorio en GitHub:</p>
+            <a href="https://github.com/new" target="_blank" class="button">Crear Repositorio</a>
+            <p><strong>Configuración:</strong></p>
+            <ul>
+                <li>Nombre: <code>contabilidad-personal</code></li>
+                <li>Descripción: <code>Aplicación web de contabilidad personal</code></li>
+                <li>Público (para que sea gratis)</li>
+                <li>NO marques "Add a README file"</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📁 Paso 2: Subir archivos a GitHub</h3>
+            <p>Una vez creado el repositorio, sube estos archivos:</p>
+            <div class="code">
+                index.html<br>
+                estilos.css<br>
+                script.js<br>
+                README.md
+            </div>
+            <p><strong>Método rápido:</strong></p>
+            <ol>
+                <li>Haz clic en "Add file" → "Upload files"</li>
+                <li>Arrastra los 4 archivos de tu carpeta</li>
+                <li>Escribe un mensaje: "Primera versión"</li>
+                <li>Haz clic en "Commit changes"</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>🔗 Paso 3: Conectar con Netlify</h3>
+            <p>Ve a Netlify y conecta tu repositorio:</p>
+            <a href="https://app.netlify.com/start" target="_blank" class="button">Ir a Netlify</a>
+            <p><strong>Pasos en Netlify:</strong></p>
+            <ol>
+                <li>Haz clic en "Sign up" (arriba a la derecha)</li>
+                <li>Selecciona "Continue with GitHub"</li>
+                <li>Autoriza Netlify para acceder a GitHub</li>
+                <li>Haz clic en "New site from Git"</li>
+                <li>Selecciona "GitHub"</li>
+                <li>Busca tu repositorio: <code>contabilidad-personal</code></li>
+                <li>Haz clic en "Deploy site"</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            <h3>🎉 ¡Listo!</h3>
+            <p>Tu aplicación estará disponible en:</p>
+            <div class="code">
+                https://tu-sitio.netlify.app
+            </div>
+            <p><strong>Tiempo de espera:</strong> 1-2 minutos</p>
+            <p><strong>Ventajas:</strong></p>
+            <ul>
+                <li>✅ HTTPS automático</li>
+                <li>✅ Dominio personalizado gratis</li>
+                <li>✅ Deploy automático al actualizar</li>
+                <li>✅ Analytics incluidos</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔧 Configuración adicional</h3>
+            <p>Una vez desplegado, puedes:</p>
+            <ul>
+                <li><strong>Cambiar el nombre:</strong> Site settings → Change site name</li>
+                <li><strong>Dominio personalizado:</strong> Domain settings → Add custom domain</li>
+                <li><strong>Analytics:</strong> Analytics → Enable analytics</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="button">← Volver a la Aplicación</a>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir a GitHub - Contabilidad Personal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #ffd700;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        .button {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border-left-color: #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Subir Contabilidad Personal a GitHub</h1>
+        
+        <div class="step">
+            <h3>📋 Paso 1: Crear repositorio en GitHub</h3>
+            <p>Ve a GitHub y crea un nuevo repositorio:</p>
+            <a href="https://github.com/new" target="_blank" class="button">Crear Repositorio</a>
+            <p><strong>Configuración:</strong></p>
+            <ul>
+                <li>Nombre: <code>contabilidad-personal</code></li>
+                <li>Descripción: <code>Aplicación web de contabilidad personal</code></li>
+                <li>Público (para que sea gratis)</li>
+                <li>NO marques "Add a README file"</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📁 Paso 2: Subir archivos manualmente</h3>
+            <p>Una vez creado el repositorio, sube estos archivos:</p>
+            <div class="code">
+                index.html<br>
+                estilos.css<br>
+                script.js<br>
+                README.md
+            </div>
+            <p><strong>Método rápido:</strong></p>
+            <ol>
+                <li>Haz clic en "Add file" → "Upload files"</li>
+                <li>Arrastra los 4 archivos de tu carpeta</li>
+                <li>Escribe un mensaje: "Primera versión"</li>
+                <li>Haz clic en "Commit changes"</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>⚙️ Paso 3: Activar GitHub Pages</h3>
+            <p>Ve a Settings → Pages y configura:</p>
+            <ul>
+                <li>Source: "Deploy from a branch"</li>
+                <li>Branch: "main" o "master"</li>
+                <li>Folder: "/ (root)"</li>
+                <li>Haz clic en "Save"</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🎉 ¡Listo!</h3>
+            <p>Tu aplicación estará disponible en:</p>
+            <div class="code">
+                https://JhonSanchez01.github.io/contabilidad-personal
+            </div>
+            <p><strong>Tiempo de espera:</strong> 2-5 minutos para que se active</p>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Alternativa más fácil: Netlify</h3>
+            <p>Si prefieres algo aún más rápido:</p>
+            <ol>
+                <li>Ve a <a href="https://netlify.com" target="_blank" style="color: #ffd700;">netlify.com</a></li>
+                <li>Arrastra tu carpeta completa</li>
+                <li>¡Listo! URL automática en segundos</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="button">← Volver a la Aplicación</a>
+        </div>
+    </div>
+</body>
+</html> 

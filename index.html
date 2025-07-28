@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Aplicación de contabilidad personal moderna y fácil de usar. Gestiona tus pagos, deudas y mantén un historial completo de tus finanzas.">
+  <meta name="keywords" content="contabilidad, finanzas personales, pagos, deudas, gestión financiera">
+  <meta name="author" content="Contabilidad Personal">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tu-dominio.com/">
+  <meta property="og:title" content="Contabilidad Personal">
+  <meta property="og:description" content="Gestiona tus finanzas personales de forma fácil y moderna">
+  <meta property="og:image" content="https://tu-dominio.com/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tu-dominio.com/">
+  <meta property="twitter:title" content="Contabilidad Personal">
+  <meta property="twitter:description" content="Gestiona tus finanzas personales de forma fácil y moderna">
+  <meta property="twitter:image" content="https://tu-dominio.com/og-image.jpg">
+
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#667eea">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Contabilidad Personal">
+  <meta name="msapplication-TileColor" content="#667eea">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <title>Contabilidad Personal</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <i class="fas fa-calculator"></i>
+      <h1>Contabilidad Personal</h1>
+    </div>
+    
+    <!-- Sección de Pago -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-wallet"></i>
+        <h3>Mi Pago</h3>
+      </div>
+      <div class="card-content">
+        <div class="input-group">
+          <label for="pago">Ingresa tu pago:</label>
+          <input type="number" id="pago" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
+          <span id="pagoGuardado" class="balance-display"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Deuda -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-credit-card"></i>
+        <h3>Lo que Debo</h3>
+      </div>
+      <div class="card-content">
+        <div class="input-group">
+          <label for="categoria">Categoría:</label>
+          <select id="categoria">
+            <option value="servicios">🏠 Servicios</option>
+            <option value="prestamo">💰 Préstamo</option>
+            <option value="tarjeta">💳 Tarjeta de Crédito</option>
+            <option value="otro">📝 Otro</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="deuda">Monto de la deuda:</label>
+          <input type="number" id="deuda" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
+          <span id="deudaGuardada" class="debt-display"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Abono -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Realizar Abono</h3>
+      </div>
+      <div class="card-content">
+        <div class="input-group">
+          <label for="abono">Cantidad a abonar:</label>
+          <div class="input-with-button">
+            <input type="number" id="abono" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
+            <button id="btnAbonar" class="btn-primary">
+              <i class="fas fa-plus"></i> Abonar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones de Estado -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-check-circle"></i>
+        <h3>Estado del Pago</h3>
+      </div>
+      <div class="card-content">
+        <div class="button-group">
+          <button id="btnPagado" class="btn-success">
+            <i class="fas fa-check"></i> Ya pagué todo
+          </button>
+          <button id="btnDebo" class="btn-warning">
+            <i class="fas fa-clock"></i> Todavía debo
+          </button>
+        </div>
+        <div id="estado" class="status-display"></div>
+      </div>
+    </div>
+
+    <!-- Historial -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-history"></i>
+        <h3>Historial de Pagos</h3>
+      </div>
+      <div class="card-content">
+        <div id="historial" class="history-container"></div>
+      </div>
+    </div>
+
+    <!-- Acciones -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-cog"></i>
+        <h3>Acciones</h3>
+      </div>
+      <div class="card-content">
+        <div class="button-group">
+          <button id="btnExportar" class="btn-export">
+            <i class="fas fa-download"></i> Exportar Datos
+          </button>
+          <button id="btnExportarPDF" class="btn-pdf">
+            <i class="fas fa-file-pdf"></i> Exportar PDF
+          </button>
+          <button id="btnLimpiar" class="btn-danger">
+            <i class="fas fa-trash"></i> Limpiar Todo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
