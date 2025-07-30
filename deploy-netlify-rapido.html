@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Netlify - Automático</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .button {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+            transform: translateY(-2px);
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            word-break: break-all;
+            font-size: 16px;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #ffd700;
+        }
+        .netlify {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #00ad9f;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Deploy Netlify - Automático</h1>
+        
+        <div class="success">
+            <h3>✅ Tu repositorio está listo</h3>
+            <p><strong>URL del repositorio:</strong></p>
+            <div class="code">
+                https://github.com/JhonSanchez01/contabilidad-personal
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🚀 Deploy en Netlify (30 segundos)</h3>
+            <p><strong>Haz clic en el botón para conectar automáticamente:</strong></p>
+            <a href="https://app.netlify.com/start" target="_blank" class="button">🚀 Deploy en Netlify</a>
+            <p><strong>Pasos automáticos:</strong></p>
+            <ol>
+                <li>Haz clic en "Sign up" → "Continue with GitHub"</li>
+                <li>Autoriza Netlify para acceder a GitHub</li>
+                <li>Haz clic en "New site from Git"</li>
+                <li>Selecciona "GitHub"</li>
+                <li>Busca: <code>JhonSanchez01/contabilidad-personal</code></li>
+                <li>Haz clic en "Deploy site"</li>
+            </ol>
+        </div>
+
+        <div class="netlify">
+            <h3>🎉 Tu aplicación estará en:</h3>
+            <div class="code">
+                https://tu-sitio.netlify.app
+            </div>
+            <p><strong>Tiempo de deploy:</strong> 30 segundos</p>
+            <p><strong>Ventajas de Netlify:</strong></p>
+            <ul>
+                <li>✅ HTTPS automático</li>
+                <li>✅ Dominio personalizado gratis</li>
+                <li>✅ Deploy automático al actualizar</li>
+                <li>✅ Analytics incluidos</li>
+                <li>✅ CDN global</li>
+                <li>✅ Formularios incluidos</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📱 Funciona en todos los dispositivos:</h3>
+            <ul>
+                <li>✅ iPhone / Android (móviles)</li>
+                <li>✅ iPad / Tablets</li>
+                <li>✅ Windows / Mac (desktop)</li>
+                <li>✅ Chrome / Safari / Firefox / Edge</li>
+                <li>✅ HTTPS automático</li>
+                <li>✅ Dominio personalizado</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔧 Configuración adicional:</h3>
+            <p>Una vez desplegado, puedes:</p>
+            <ul>
+                <li><strong>Cambiar el nombre:</strong> Site settings → Change site name</li>
+                <li><strong>Dominio personalizado:</strong> Domain settings → Add custom domain</li>
+                <li><strong>Analytics:</strong> Analytics → Enable analytics</li>
+                <li><strong>Formularios:</strong> Forms → Enable form detection</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="button">← Volver a la Aplicación</a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect después de 2 segundos
+        setTimeout(() => {
+            if (confirm('¿Quieres ir directamente a Netlify para hacer el deploy?')) {
+                window.open('https://app.netlify.com/start', '_blank');
+            }
+        }, 2000);
+    </script>
+</body>
+</html> 

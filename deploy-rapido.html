@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Rápido - Contabilidad Personal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #ffd700;
+        }
+        .button {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border-left-color: #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Deploy Rápido - 2 Minutos</h1>
+        
+        <div class="step">
+            <h3>🚀 Opción 1: Netlify (Más Rápido)</h3>
+            <p><strong>Tiempo:</strong> 1 minuto</p>
+            <a href="https://app.netlify.com/start" target="_blank" class="button">Deploy en Netlify</a>
+            <p><strong>Pasos:</strong></p>
+            <ol>
+                <li>Haz clic en "Sign up" → "Continue with GitHub"</li>
+                <li>Autoriza Netlify</li>
+                <li>Haz clic en "New site from Git"</li>
+                <li>Selecciona "GitHub"</li>
+                <li>Busca: <code>JhonSanchez01/contabilidad-personal</code></li>
+                <li>Haz clic en "Deploy site"</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>🌐 Opción 2: GitHub Pages (Automático)</h3>
+            <p><strong>Tiempo:</strong> 2 minutos</p>
+            <a href="https://github.com/JhonSanchez01/contabilidad-personal/settings/pages" target="_blank" class="button">Activar GitHub Pages</a>
+            <p><strong>Pasos:</strong></p>
+            <ol>
+                <li>Ve a Settings → Pages</li>
+                <li>Source: "Deploy from a branch"</li>
+                <li>Branch: "main"</li>
+                <li>Folder: "/ (root)"</li>
+                <li>Haz clic en "Save"</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            <h3>🎉 URLs de tu aplicación:</h3>
+            <p><strong>Netlify:</strong></p>
+            <div class="code">
+                https://tu-sitio.netlify.app
+            </div>
+            <p><strong>GitHub Pages:</strong></p>
+            <div class="code">
+                https://JhonSanchez01.github.io/contabilidad-personal
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>📱 Tu aplicación ya está lista para:</h3>
+            <ul>
+                <li>✅ Móviles (iPhone, Android)</li>
+                <li>✅ Tablets (iPad, Android)</li>
+                <li>✅ Desktop (Windows, Mac)</li>
+                <li>✅ Todos los navegadores</li>
+                <li>✅ HTTPS automático</li>
+                <li>✅ Dominio personalizado</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="button">← Volver a la Aplicación</a>
+        </div>
+    </div>
+</body>
+</html> 

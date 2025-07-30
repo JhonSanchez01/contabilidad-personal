@@ -87,12 +87,13 @@ function actualizarHistorial() {
 
 // Actualizar la interfaz
 function actualizarUI() {
-  pagoInput.value = pago > 0 ? formatearNumero(pago) : '';
-  deudaInput.value = deuda > 0 ? formatearNumero(deuda) : '';
+  // Mostrar valores sin formato mientras se edita
+  pagoInput.value = pago > 0 ? pago : '';
+  deudaInput.value = deuda > 0 ? deuda : '';
   categoriaSelect.value = categoria;
   
   if (pago > 0) {
-    const saldoRestante = pago - abonado;
+    const saldoRestante = pago - deuda; // Cambio: se descuenta la deuda completa
     pagoGuardado.textContent = `Saldo: $${formatearNumero(saldoRestante)}`;
   } else {
     pagoGuardado.textContent = '';
@@ -169,7 +170,7 @@ function exportarPDF() {
   
   // Tabla de resumen
   const deudaRestante = deuda - abonado;
-  const saldoRestante = pago - abonado;
+  const saldoRestante = pago - deuda;
   
   const resumenData = [
     ['Concepto', 'Monto'],
@@ -285,7 +286,7 @@ function limpiarTodo() {
 }
 
 // Eventos para guardar cambios
-pagoInput.addEventListener('change', () => {
+pagoInput.addEventListener('input', () => {
   const valorLimpio = limpiarFormatoNumero(pagoInput.value);
   pago = parseFloat(valorLimpio) || 0;
   guardarDatos();
@@ -298,7 +299,7 @@ pagoInput.addEventListener('blur', () => {
   }
 });
 
-deudaInput.addEventListener('change', () => {
+deudaInput.addEventListener('input', () => {
   const valorLimpio = limpiarFormatoNumero(deudaInput.value);
   deuda = parseFloat(valorLimpio) || 0;
   abonado = 0;
