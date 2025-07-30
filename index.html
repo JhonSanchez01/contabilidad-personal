@@ -45,34 +45,44 @@
 </head>
 <body>
   <div class="container">
+    <!-- Header compacto -->
     <div class="header">
-      <i class="fas fa-calculator"></i>
-      <h1>Contabilidad Personal</h1>
-    </div>
-    
-    <!-- Sección de Pago -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-wallet"></i>
-        <h3>Mi Pago</h3>
-      </div>
-      <div class="card-content">
-        <div class="input-group">
-          <label for="pago">Ingresa tu pago:</label>
-          <input type="number" id="pago" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
-          <span id="pagoGuardado" class="balance-display"></span>
-        </div>
+      <div class="header-content">
+        <i class="fas fa-calculator"></i>
+        <h1>Contabilidad Personal</h1>
       </div>
     </div>
 
-    <!-- Sección de Deuda -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-credit-card"></i>
-        <h3>Lo que Debo</h3>
+    <!-- Dashboard principal -->
+    <div class="dashboard">
+      <!-- Resumen rápido -->
+      <div class="summary-cards">
+        <div class="summary-card income">
+          <div class="card-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="card-content">
+            <h3>Mi Pago</h3>
+            <div class="amount" id="pagoGuardado">$0.00</div>
+            <input type="number" id="pago" min="0" step="0.01" placeholder="Ingresa tu pago" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="summary-card debt">
+          <div class="card-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <div class="card-content">
+            <h3>Lo que Debo</h3>
+            <div class="amount" id="deudaGuardada">$0.00</div>
+            <input type="number" id="deuda" min="0" step="0.01" placeholder="Ingresa tu deuda" inputmode="decimal">
+          </div>
+        </div>
       </div>
-      <div class="card-content">
-        <div class="input-group">
+
+      <!-- Categoría y abono -->
+      <div class="action-section">
+        <div class="category-selector">
           <label for="categoria">Categoría:</label>
           <select id="categoria">
             <option value="servicios">🏠 Servicios</option>
@@ -81,79 +91,49 @@
             <option value="otro">📝 Otro</option>
           </select>
         </div>
-        <div class="input-group">
-          <label for="deuda">Monto de la deuda:</label>
-          <input type="number" id="deuda" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
-          <span id="deudaGuardada" class="debt-display"></span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Sección de Abono -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-hand-holding-usd"></i>
-        <h3>Realizar Abono</h3>
-      </div>
-      <div class="card-content">
-        <div class="input-group">
-          <label for="abono">Cantidad a abonar:</label>
-          <div class="input-with-button">
-            <input type="number" id="abono" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
+        <div class="payment-actions">
+          <div class="abono-input">
+            <input type="number" id="abono" min="0" step="0.01" placeholder="Cantidad a abonar" inputmode="decimal">
             <button id="btnAbonar" class="btn-primary">
               <i class="fas fa-plus"></i> Abonar
             </button>
           </div>
+          
+          <div class="status-buttons">
+            <button id="btnPagado" class="btn-success">
+              <i class="fas fa-check"></i> Ya pagué
+            </button>
+            <button id="btnDebo" class="btn-warning">
+              <i class="fas fa-clock"></i> Aún debo
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Botones de Estado -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-check-circle"></i>
-        <h3>Estado del Pago</h3>
-      </div>
-      <div class="card-content">
-        <div class="button-group">
-          <button id="btnPagado" class="btn-success">
-            <i class="fas fa-check"></i> Ya pagué todo
-          </button>
-          <button id="btnDebo" class="btn-warning">
-            <i class="fas fa-clock"></i> Todavía debo
-          </button>
+      <!-- Estado del pago -->
+      <div class="status-display" id="estado"></div>
+
+      <!-- Historial compacto -->
+      <div class="history-section">
+        <div class="section-header">
+          <i class="fas fa-history"></i>
+          <h3>Historial de Pagos</h3>
         </div>
-        <div id="estado" class="status-display"></div>
-      </div>
-    </div>
-
-    <!-- Historial -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-history"></i>
-        <h3>Historial de Pagos</h3>
-      </div>
-      <div class="card-content">
         <div id="historial" class="history-container"></div>
       </div>
-    </div>
 
-    <!-- Acciones -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-cog"></i>
-        <h3>Acciones</h3>
-      </div>
-      <div class="card-content">
-        <div class="button-group">
+      <!-- Acciones -->
+      <div class="actions-section">
+        <div class="action-buttons">
           <button id="btnExportar" class="btn-export">
-            <i class="fas fa-download"></i> Exportar Datos
+            <i class="fas fa-download"></i> Exportar
           </button>
           <button id="btnExportarPDF" class="btn-pdf">
-            <i class="fas fa-file-pdf"></i> Exportar PDF
+            <i class="fas fa-file-pdf"></i> PDF
           </button>
           <button id="btnLimpiar" class="btn-danger">
-            <i class="fas fa-trash"></i> Limpiar Todo
+            <i class="fas fa-trash"></i> Limpiar
           </button>
         </div>
       </div>
